@@ -25,20 +25,22 @@ public class StacjaRowerowa {
     }
 
     public void naprawRower(Rower rower) {
+        rower.setStan_roweru(true);
     }
 
     public Rower wyszukajRower(int numer_identyfikacyjny) {
         return liczba_rowerow.get(numer_identyfikacyjny);
     }
 
-    public void edytujRower(Rower rower) {
+    public void edytujRower(Rower rower, Rower rower2) {
+        rower.setPrzebieg(rower2.getPrzebieg());
+        rower.setStan_roweru(rower2.isStan_roweru());
     }
 
-    public void wyswietlRowery(boolean czyTylkoDostepne) {
-        if (czyTylkoDostepne) {
-            //wyswietl dostepne rowery
-        } else{
-            //wyswietl wszystkie rowery
+    public void wyswietlRowery() {
+        for (Rower r : liczba_rowerow) {
+            System.out.println(r.pokazRower());
         }
     }
+
 }
